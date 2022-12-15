@@ -19,3 +19,33 @@ class ReversedString:
 
 
 output = ReversedString().printing()
+
+
+#################################### TASK CONDITION ############################
+"""
+
+1.	Reverse Strings
+Write program that:
+•	Reads an input string
+•	Reverses it using a stack
+•	Prints the result back on the console
+
+____________________________________________________________________________________________
+Example_01
+
+Input
+I Love Python
+
+Output
+nohtyP evoL I
+
+____________________________________________________________________________________________
+Example_02
+
+Input
+Stacks and Queues
+
+Output
+seueuQ dna skcatS
+
+"""

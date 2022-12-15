@@ -36,6 +36,22 @@ class ReversedString:
 
 
 output = ReversedString().printing()
+# ##################################### variant 05 #####################################
+class ReversedString:
+
+    def __init__(self, input_string):
+        self.input_string = list(input_string)
+
+    def __repr__(self):
+        output_string = ''
+        while self.input_string:
+            output_string += f'{self.input_string.pop()}'
+        return output_string
+
+input_text = input()
+output = ReversedString(input_text)
+print(output)
+
 
 #################################### TASK CONDITION ############################
 """

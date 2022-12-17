@@ -36,7 +36,7 @@ separated by a single space, and reverses them using a stack.
 Print the reversed integers on one line, separated by a single space.
 
 ____________________________________________________________________________________________
-Example_02
+Example_01
 
 Input
 1 2 3 4 5	

@@ -21,7 +21,7 @@ while input_line:
     if not balanced:
         break
 
-print('YES' if balanced else 'NO')
+print('YES' if balanced and not opening_brackets else 'NO')
 
 ##################################### variant 02 #####################################
 
@@ -32,26 +32,33 @@ class Balancing:
 
     def __init__(self, some_text):
         self.some_text = some_text
+        self.opening_brackets = deque()
         self.balanced = True
         self.pairs = {"(": ")", "[": "]", "{": "}"}
 
     def check_balance(self):
-        opening_brackets = deque()
         while self.some_text:
             bracket = self.some_text.popleft()
 
             if bracket in '{([':
-                opening_brackets.append(bracket)
-            elif not opening_brackets:
+                self.opening_brackets.append(bracket)
+            elif not self.opening_brackets:
                 self.balanced = False
-            elif self.pairs[opening_brackets.pop()] != bracket:
+            elif self.pairs[self.opening_brackets.pop()] != bracket:
                 self.balanced = False
 
             if not self.balanced:
                 break
 
     def __repr__(self):
-        return 'YES' if self.balanced else 'NO'
+        return 'YES' if self.balanced and not self.opening_brackets else 'NO'
+
+
+input_line = deque(input())
+output = Balancing(input_line)
+output.check_balance()
+print(output)
+
 
 
 input_line = deque(input())

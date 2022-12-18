@@ -60,12 +60,6 @@ output.check_balance()
 print(output)
 
 
-
-input_line = deque(input())
-output = Balancing(input_line)
-output.check_balance()
-print(output)
-
 #################################### TASK CONDITION ############################
 """
                          6. Balanced Parentheses

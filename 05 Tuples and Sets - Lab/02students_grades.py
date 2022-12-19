@@ -16,6 +16,24 @@ for name, grades in students_book.items():
 
 ##################################### variant 02 #####################################
 
+##################################### variant 01 #####################################
+
+from collections import defaultdict
+
+number_of_students = int(input())
+students_book = defaultdict(list)
+
+for i in range(number_of_students):
+    name, grade = input().split()
+    students_book[name].append(float(grade))
+
+for name, grades in students_book.items():
+    average_grade = sum(grades) / len(grades)
+    list_of_grades = ' '.join(f'{n:.2f}' for n in grades)
+    print(f"{name} -> {list_of_grades} (avg: {average_grade:.2f})")
+
+##################################### variant 02 #####################################
+
 from collections import defaultdict
 
 
@@ -24,7 +42,7 @@ class Main:
     def __init__(self, number):
         self.number = number
         self.students_book = defaultdict(list)
-        self.log = ''
+        self.log = []
 
     def students_booking(self):
         for i in range(self.number):
@@ -35,10 +53,10 @@ class Main:
         for name, grades in self.students_book.items():
             average_grade = sum(grades) / len(grades)
             list_of_grades = ' '.join(f'{n:.2f}' for n in grades)
-            self.log += f"{name} -> {list_of_grades} (avg: {average_grade:.2f})\n"
+            self.log.append(f"{name} -> {list_of_grades} (avg: {average_grade:.2f})")
 
     def __repr__(self):
-        return self.log
+        return "\n".join(row for row in self.log)
 
 
 number_of_students = int(input())

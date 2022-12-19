@@ -16,24 +16,6 @@ for name, grades in students_book.items():
 
 ##################################### variant 02 #####################################
 
-##################################### variant 01 #####################################
-
-from collections import defaultdict
-
-number_of_students = int(input())
-students_book = defaultdict(list)
-
-for i in range(number_of_students):
-    name, grade = input().split()
-    students_book[name].append(float(grade))
-
-for name, grades in students_book.items():
-    average_grade = sum(grades) / len(grades)
-    list_of_grades = ' '.join(f'{n:.2f}' for n in grades)
-    print(f"{name} -> {list_of_grades} (avg: {average_grade:.2f})")
-
-##################################### variant 02 #####################################
-
 from collections import defaultdict
 
 
@@ -64,7 +46,6 @@ output = Main(number_of_students)
 output.students_booking()
 output.message()
 print(output)
-
 
 #################################### TASK CONDITION ############################
 """

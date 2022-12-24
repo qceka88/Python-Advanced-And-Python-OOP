@@ -1,17 +1,15 @@
 ##################################### variant 01 #####################################
 
-from collections import deque
-
 size = int(input())
 
 matrix = [[int(x) for x in input().split(', ')] for row in range(int(size))]
 
 primary_diagonal = []
-secondary_diagonal = deque()
+secondary_diagonal = []
 
 for i in range(len(matrix)):
     primary_diagonal.append(matrix[i][i])
-    secondary_diagonal.appendleft(matrix[(len(matrix) - 1) - i][i])
+    secondary_diagonal.append(matrix[i][(len(matrix) - 1) - i])
 
 print(f'Primary diagonal: {", ".join(map(str, primary_diagonal))}. Sum: {sum(primary_diagonal)}')
 print(f'Secondary diagonal: {", ".join(map(str, secondary_diagonal))}. Sum: {sum(secondary_diagonal)}')

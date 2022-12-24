@@ -16,14 +16,12 @@ class Main:
         self.rows = rows
         self.cols = cols
         self.matrix = []
-        self.primary_diagonal = []
-        self.secondary_diagonal = []
         self.squares = 0
 
     def create_matrix(self):
         self.matrix = [[x for x in input().split()] for i in range(self.rows)]
 
-    def find_diagonals(self):
+    def find_squares(self):
         for row in range(self.rows - 1):
             for col in range(self.cols - 1):
                 if self.matrix[row][col] == self.matrix[row][col + 1] == self.matrix[row + 1][col] == \
@@ -37,7 +35,7 @@ class Main:
 rows_number, cols_number = list(map(int, input().split()))
 output = Main(rows_number, cols_number)
 output.create_matrix()
-output.find_diagonals()
+output.find_squares()
 print(output)
 
 #################################### TASK CONDITION ############################

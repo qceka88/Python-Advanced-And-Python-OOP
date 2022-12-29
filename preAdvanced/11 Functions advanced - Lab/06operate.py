@@ -1,6 +1,6 @@
 ##################################### variant 01 #####################################
 from functools import reduce
-from functools import reduce
+
 
 
 def operate(operator, *args):
@@ -11,11 +11,11 @@ def operate(operator, *args):
 print(operate("+", 1, 2, 3))
 print(operate("*", 3, 4))
 
-from functools import reduce
+
 
 
 ##################################### variant 02 #####################################
-
+from functools import reduce
 class Operator:
 
     def __init__(self, symbol, numbers):

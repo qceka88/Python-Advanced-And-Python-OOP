@@ -16,26 +16,18 @@ class Humans:
         self.args = args
         self.kwargs = kwargs
         self.people = {}
-        self.message = []
 
     def assignment(self):
         for name in self.args:
             first_letter = name[0]
             self.people[name] = self.kwargs[first_letter]
-
-    def result(self):
-        for name, age in sorted(self.people.items()):
-            self.message.append(f"{name} is {age} years old.")
-
-    def __repr__(self):
-        return '\n'.join(self.message)
+        return '\n'.join(f"{name} is {age} years old." for name, age in sorted(self.people.items()))
 
 
 def age_assignment(*args, **kwargs):
-    output = Humans(*args, **kwargs)
-    output.assignment()
-    output.result()
+    output = Humans(*args, **kwargs).assignment()
     return output
+
 
 #Part below is part from automatic judge system from SoftUni
 print(age_assignment("Peter", "George", G=26, P=19))

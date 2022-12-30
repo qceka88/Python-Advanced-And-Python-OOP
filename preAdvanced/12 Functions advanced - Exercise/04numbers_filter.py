@@ -9,7 +9,7 @@ def even_odd_filter(**kwargs):
     sorted_result = {key: value for key, value in sorted(result.items(), key=lambda x: -len(x[1]))}
     return sorted_result
 
-
+#Part below is part from automatic judge system from SoftUni
 print(even_odd_filter(
     odd=[1, 2, 3, 4, 10, 5],
     even=[3, 4, 5, 7, 10, 2, 5, 5, 2],
@@ -40,7 +40,7 @@ def even_odd_filter(**kwargs):
     result.filter()
     return result.return_data()
 
-
+#Part below is part from automatic judge system from SoftUni
 print(even_odd_filter(
     odd=[1, 2, 3, 4, 10, 5],
     even=[3, 4, 5, 7, 10, 2, 5, 5, 2],

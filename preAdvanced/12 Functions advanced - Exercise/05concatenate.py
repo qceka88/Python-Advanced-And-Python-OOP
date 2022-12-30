@@ -5,7 +5,7 @@ def concatenate(*args, **kwargs):
         sequence = sequence.replace(key, value)
     return sequence
 
-
+#Part below is part from automatic judge system from SoftUni
 print(concatenate("Soft", "UNI", "Is", "Grate", "!", UNI="Uni", Grate="Great"))
 print(concatenate("I", " ", "Love", " ", "Cythons", C="P", s="", java='Java'))
 
@@ -29,7 +29,7 @@ def concatenate(*args, **kwargs):
     result = Concatenator(*args, **kwargs).create_sequence()
     return result
 
-
+#Part below is part from automatic judge system from SoftUni
 print(concatenate("Soft", "UNI", "Is", "Grate", "!", UNI="Uni", Grate="Great"))
 print(concatenate("I", " ", "Love", " ", "Cythons", C="P", s="", java='Java'))
 

@@ -9,7 +9,7 @@ def even_odd(*args):
             result.append(num)
     return result
 
-
+#Part below is part from automatic judge system from SoftUni
 print(even_odd(1, 2, 3, 4, 5, 6, "even"))
 print(even_odd(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "odd"))
 
@@ -36,7 +36,7 @@ def even_odd(*args):
     result = Main(*args).return_to_main()
     return result
 
-
+#Part below is part from automatic judge system from SoftUni
 print(even_odd(1, 2, 3, 4, 5, 6, "even"))
 print(even_odd(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "odd"))
 

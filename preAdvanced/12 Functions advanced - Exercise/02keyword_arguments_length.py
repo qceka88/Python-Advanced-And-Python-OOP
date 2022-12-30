@@ -2,7 +2,7 @@
 def kwargs_length(**kwargs):
     return len(kwargs)
 
-
+#Part below is part from automatic judge system from SoftUni
 dictionary = {'name': 'Peter', 'age': 25}
 print(kwargs_length(**dictionary))
 
@@ -22,7 +22,7 @@ def kwargs_length(**kwargs):
     result = Main(**kwargs).return_to_main()
     return result
 
-
+#Part below is part from automatic judge system from SoftUni
 dictionary = {'name': 'Peter', 'age': 25}
 print(kwargs_length(**dictionary))
 

@@ -14,7 +14,7 @@ def forecast(*args):
     return '\n'.join(
         f'{location_name} - {weather}' for weather in sorted_result for location_name in sorted_result[weather])
 
-
+#Part below is part from automatic judge system from SoftUni
 print(forecast(
     ("Sofia", "Sunny"),
     ("London", "Cloudy"),
@@ -60,7 +60,7 @@ def forecast(*args):
     output.sort_data()
     return output.return_data()
 
-
+#Part below is part from automatic judge system from SoftUni
 print(forecast(
     ("Sofia", "Sunny"),
     ("London", "Cloudy"),

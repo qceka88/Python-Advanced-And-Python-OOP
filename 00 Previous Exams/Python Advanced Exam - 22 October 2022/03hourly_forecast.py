@@ -119,9 +119,17 @@ Test Code	(no input data in this task)
 print(forecast(
     ("Sofia", "Sunny"),
     ("London", "Cloudy"),
-    ("New York", "Sunny")))	New York - Sunny
+    ("New York", "Sunny")))
+
+Output    
+New York - Sunny
 Sofia - Sunny
 London - Cloudy
+
+_______________________________________________
+Example_02
+
+Test Code	(no input data in this task)
 print(forecast(
     ("Beijing", "Sunny"),
     ("Hong Kong", "Rainy"),
@@ -129,7 +137,10 @@ print(forecast(
     ("Sofia", "Cloudy"),
     ("Peru", "Sunny"),
     ("Florence", "Cloudy"),
-    ("Bourgas", "Sunny")))	Beijing - Sunny
+    ("Bourgas", "Sunny")))
+
+Output  
+Beijing - Sunny
 Bourgas - Sunny
 Peru - Sunny
 Tokyo - Sunny
@@ -137,9 +148,16 @@ Florence - Cloudy
 Sofia - Cloudy
 Hong Kong - Rainy
 
+_______________________________________________
+Example_03
+
+Test Code	(no input data in this task)
 print(forecast(
     ("Tokyo", "Rainy"),
-    ("Sofia", "Rainy")))	Sofia - Rainy
+    ("Sofia", "Rainy")))
+
+Output
+Sofia - Rainy
 Tokyo - Rainy
 
 '''

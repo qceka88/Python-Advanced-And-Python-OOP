@@ -5,12 +5,7 @@ figure_color = {'w': 'White', 'b': 'Black'}
 
 first_letter_ascii = 97
 chess_board = []
-directions_dict = {
-    'u': (-1, 0), 'ul': (-1, -1), 'ur': (-1, 1),
-    'd': (1, 0), 'dl': (1, -1), 'dr': (1, 1),
-    'l': (0, -1), 'r': (0, 1),
-
-}
+directions_dict = {'l': (0, -1), 'r': (0, 1)}
 for row in range(size):
     line = input().split()
     if 'w' in line:
@@ -20,12 +15,13 @@ for row in range(size):
     chess_board.append(line)
 
 winner = False
-
+square = ''
 while not winner:
-    square = ''
+
     for pawn in player_location:
+        operator = '-' if pawn == 'w' else '+'
         for way in directions_dict.values():
-            try_row, try_col = way[0] + player_location[pawn][0], way[1] + player_location[pawn][1]
+            try_row, try_col = eval(str(player_location[pawn][0]) + operator + '1'), way[1] + player_location[pawn][1]
             if 0 <= try_row < size and 0 <= try_col < size:
                 if chess_board[try_row][try_col] != '-':
                     square = chr(first_letter_ascii + try_col) + str(size - try_row)
@@ -35,7 +31,7 @@ while not winner:
             print(f"Game over! {figure_color[pawn]} win, capture on {square}.")
             break
         chess_board[player_location[pawn][0]][player_location[pawn][1]] = '-'
-        operator = '-' if pawn == 'w' else '+'
+
         pawn_row = eval(str(player_location[pawn][0]) + operator + '1')
         pawn_col = player_location[pawn][1]
         player_location[pawn] = [pawn_row, pawn_col]
@@ -48,6 +44,7 @@ while not winner:
 
 ##################################### variant 01 #####################################
 
+
 class PawnWars:
 
     def __init__(self, size):
@@ -56,12 +53,7 @@ class PawnWars:
         self.figure_color = {'w': 'White', 'b': 'Black'}
         self.first_letter_ascii = 97
         self.chess_board = []
-        self.directions = {
-            'u': (-1, 0), 'ul': (-1, -1), 'ur': (-1, 1),
-            'd': (1, 0), 'dl': (1, -1), 'dr': (1, 1),
-            'l': (0, -1), 'r': (0, 1),
-
-        }
+        self.directions = {'l': (0, -1), 'r': (0, 1)}
         self.winner = False
         self.message = ''
 
@@ -74,9 +66,9 @@ class PawnWars:
                 self.player_location['b'] = [row, line.index('b')]
             self.chess_board.append(line)
 
-    def check_for_capture(self, color):
+    def check_for_capture(self, color,operator):
         for way in self.directions.values():
-            try_row, try_col = way[0] + self.player_location[color][0], way[1] + self.player_location[color][1]
+            try_row, try_col = eval(str(self.player_location[color][0]) + operator + '1'), way[1] + self.player_location[color][1]
             if 0 <= try_row < self.size and 0 <= try_col < self.size:
                 if self.chess_board[try_row][try_col] != '-':
                     coordinates = chr(self.first_letter_ascii + try_col) + str(self.size - try_row)
@@ -87,13 +79,14 @@ class PawnWars:
         while not self.winner:
 
             for pawn in self.player_location:
-                self.winner = self.check_for_capture(pawn)
+                operator = '-' if pawn == 'w' else '+'
+                self.winner = self.check_for_capture(pawn, operator)
                 if self.winner is not False:
                     square = self.winner
                     self.message = f"Game over! {self.figure_color[pawn]} win, capture on {square}."
                     break
                 self.chess_board[self.player_location[pawn][0]][self.player_location[pawn][1]] = '-'
-                operator = '-' if pawn == 'w' else '+'
+
                 pawn_row = eval(str(self.player_location[pawn][0]) + operator + '1')
                 pawn_col = self.player_location[pawn][1]
                 self.player_location[pawn] = [pawn_row, pawn_col]
@@ -115,6 +108,7 @@ output = PawnWars(size_of_matrix)
 output.create_chess_board()
 output.time_to_play_the_game()
 print(output)
+
 
 #################################### TASK CONDITION ############################
 '''

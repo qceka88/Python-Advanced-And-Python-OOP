@@ -35,8 +35,45 @@ game_result = dict(sorted(players_result.items(), key=lambda x: (x[1][0])))
 winner = list(game_result.keys())[0]
 turns = game_result[winner][1]
 print(f'{winner} won the game with {turns} throws!')
+##################################### variant 02 #####################################
+from collections import deque
 
-##################################### variant 01 #####################################
+size = 7
+player_names = deque(input().split(', '))
+players_result = {player_names[0]: [501, 0],
+                  player_names[1]: [501, 0]}
+board = [input().split() for row in range(size)]
+
+options = {'D': 2,
+           'T': 3,
+           'B': 501}
+
+while True:
+    coordinates = input()
+    if not coordinates:
+        break
+    row, col = tuple(map(int, coordinates[1:-1].split(', ')))
+    current_player = player_names.popleft()
+    players_result[current_player][1] += 1
+    if 0 <= row < size and 0 <= col < size:
+        symbol = board[row][col]
+        hit = 0
+
+        try:
+            hit = options[symbol] * (
+                    int(board[0][col]) + int(board[size - 1][col]) + int(board[row][0]) + int(board[row][size - 1]))
+        except KeyError:
+            hit = int(symbol)
+        players_result[current_player][0] -= hit
+        if players_result[current_player][0] <= 0:
+            break
+    player_names.append(current_player)
+
+game_result = dict(sorted(players_result.items(), key=lambda x: (x[1][0])))
+winner = list(game_result.keys())[0]
+turns = game_result[winner][1]
+print(f'{winner} won the game with {turns} throws!')
+##################################### variant 03 #####################################
 from collections import deque
 
 

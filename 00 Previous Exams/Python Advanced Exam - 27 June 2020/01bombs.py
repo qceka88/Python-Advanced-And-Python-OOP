@@ -44,7 +44,7 @@ left_bombs_casing = 'empty' if not bomb_casing else ', '.join(map(str, bomb_casi
 print(f'Bomb Casings: {left_bombs_casing}')
 print('\n'.join(f'{name}: {count}' for name, count in sorted(created_bombs.items())))
 
-##################################### variant 01 #####################################
+##################################### variant 02 #####################################
 
 from collections import deque
 

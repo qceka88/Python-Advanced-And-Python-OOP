@@ -1,3 +1,44 @@
+##################################### variant 01 #####################################
+class StacketQueries:
+
+    def __init__(self):
+        self.number = int(input())
+        self.stack = []
+        self.actions = {1: self.push_number,
+                        2: self.delete_number,
+                        3: self.find_max_number,
+                        4: self.find_min_number}
+        self.log_file = []
+
+    def push_number(self, some_data):
+        self.stack.append(some_data[1])
+
+    def delete_number(self, some_data):
+        if self.stack:
+            self.stack.pop()
+
+    def find_max_number(self, some_data):
+        if self.stack:
+            self.log_file.append(max(self.stack))
+
+    def find_min_number(self, some_data):
+        if self.stack:
+            self.log_file.append(min(self.stack))
+
+    def actions_with_numbers(self):
+        for iteration in range(self.number):
+            input_line = list(map(int, input().split()))
+            self.actions[input_line[0]](input_line)
+
+    def __repr__(self):
+        return '\n'.join(str(n) for n in self.log_file) + "\n" + ', '.join(map(str, self.stack[::-1]))
+
+
+if __name__ == '__main__':
+    output = StacketQueries()
+    output.actions_with_numbers()
+    print(output)
+##################################### variant 02 #####################################
 class StacketQueries:
 
     def __init__(self):
@@ -22,6 +63,7 @@ if __name__ == '__main__':
     output = StacketQueries()
     output.actions_with_numbers()
     print(output)
+
 
 #################################### TASK CONDITION ############################
 """

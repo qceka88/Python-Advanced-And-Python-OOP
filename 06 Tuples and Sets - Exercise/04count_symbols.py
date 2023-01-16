@@ -7,10 +7,10 @@ class CountSymbols:
         self.main_meth()
 
     def main_meth(self):
-        self.cont_unique_elements_int_input_data()
+        self.cont_unique_elements_in_input_data()
         self.prepare_result()
 
-    def cont_unique_elements_int_input_data(self):
+    def cont_unique_elements_in_input_data(self):
         for symbol in set(self.input_data):
             self.result[symbol] = self.input_data.count(symbol)
 

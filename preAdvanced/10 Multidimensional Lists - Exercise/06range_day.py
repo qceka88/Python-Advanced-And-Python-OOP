@@ -184,10 +184,10 @@ x . . . .
 3
 shoot down
 move right 4
-move left 
+move left  1
 
 Output
-1	Training not completed! 3 targets left.
+Training not completed! 3 targets left.
 [4, 1]
 
 ____________________________________________________________________________________________

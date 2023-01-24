@@ -12,7 +12,6 @@ class Operate:
             '*': self.multiply_numbers,
             '/': self.divide_numbers,
         }
-        self.result = ''
 
     def main_meth(self):
         result = self.actions[self.operator]()

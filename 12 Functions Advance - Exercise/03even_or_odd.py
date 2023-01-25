@@ -8,7 +8,7 @@ class EvenOdd:
             'even': self.even_numbers,
             'odd': self.odd_numbers
         }
-        self.main_meth()
+
 
     def main_meth(self):
         self.filter_numbers_as_per_command()

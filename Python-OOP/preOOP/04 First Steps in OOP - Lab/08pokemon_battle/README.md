@@ -26,8 +26,11 @@ o	The method returns the information about the trainer and his pokemon collectio
  - {pokemon_details}
  ...
  - {pokemon_details}"
-Examples
-Test Code	Output
+_______________________________________________
+Example
+
+Test Code	(no input data in this task)
+
 pokemon = Pokemon("Pikachu", 90)
 print(pokemon.pokemon_details())
 trainer = Trainer("Ash")
@@ -37,7 +40,10 @@ print(trainer.add_pokemon(second_pokemon))
 print(trainer.add_pokemon(second_pokemon))
 print(trainer.release_pokemon("Pikachu"))
 print(trainer.release_pokemon("Pikachu"))
-print(trainer.trainer_data())	Pikachu with health 90
+print(trainer.trainer_data())
+
+Output
+Pikachu with health 90
 Caught Pikachu with health 90
 Caught Charizard with health 110
 This pokemon is already caught

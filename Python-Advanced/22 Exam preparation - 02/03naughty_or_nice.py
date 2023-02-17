@@ -1,29 +1,64 @@
-def naughty_or_nice_list(santa_list, *args, **kwargs):
-    nice_kids, naughty_kids = [], []
-    result = []
+class SantaList:
 
-    def place_kid():
-        if len(kids) == 1:
-            nice_kids.extend(kids) if type_of_kid == 'Nice' else naughty_kids.extend(kids)
-            santa_list.remove(*kids)
+    def __init__(self, *data):
+        self.santa_list = data[0]
+        self.kids_dict = {"Nice": [], "Naughty": [], "Not found": []}
 
-    for data in args:
-        number, type_of_kid = data.split('-')
-        kids = [info for info in santa_list if info[0] == int(number)]
-        place_kid()
 
-    for name, type_of_kid in kwargs.items():
-        kids = [info for info in santa_list if info[1] == name]
-        place_kid()
+class SantaInAction:
 
-    if nice_kids:
-        result.append(f"Nice: {', '.join(k[1] for k in nice_kids)}")
-    if naughty_kids:
-        result.append(f"Naughty: {', '.join(k[1] for k in naughty_kids)}")
-    if santa_list:
-        result.append(f"Not found: {', '.join(k[1] for k in santa_list)}")
+    def __init__(self, data: SantaList):
+        self.data = data
 
-    return '\n'.join(result)
+    def kids_matches(self, check):
+        return [t for t in self.data.santa_list if check in t]
+
+    def santa_check_kids(self, *commands):
+        for info in commands:
+            number, command = info.split("-")
+
+            kids = self.kids_matches(int(number))
+
+            if len(kids) == 1:
+                self.data.kids_dict[command].append(kids[0][1])
+                self.data.santa_list.remove(*kids)
+
+    def check_keywords(self, **kwargs):
+        for name, command in kwargs.items():
+
+            kids = self.kids_matches(name)
+
+            if len(kids) == 1:
+                self.data.kids_dict[command].append(kids[0][1])
+                self.data.santa_list.remove(*kids)
+
+    def check_for_not_found_kids(self):
+        not_found_kids = [x[1] for x in self.data.santa_list]
+        self.data.kids_dict["Not found"].extend(not_found_kids)
+
+
+class Result:
+
+    def __init__(self):
+        self.result = []
+
+    def prepare_result(self, data: SantaList):
+        for type_of_kid, kids in data.kids_dict.items():
+            if kids:
+                self.result.append(f"{type_of_kid}: {', '.join(kids)}")
+
+
+def naughty_or_nice_list(*args, **kwargs):
+    santa_list = SantaList(*args)
+    santa_in_action = SantaInAction(santa_list)
+    santa_in_action.santa_check_kids(*args[1:])
+    santa_in_action.check_keywords(**kwargs)
+    santa_in_action.check_for_not_found_kids()
+    result = Result()
+    result.prepare_result(santa_list)
+    return '\n'.join(result.result)
+
+
 
 
 

@@ -10,3 +10,7 @@ This is a part from my education in [SoftUni](https://about.softuni.bg/).
 
 
 Every code in this folder is written on Python and is free for everyone to use it!
+
+
+Result of Python Advanced:
+![img.png](img.png)

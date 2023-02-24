@@ -11,7 +11,7 @@ class Point:
         self.y = new_y
 
     def __str__(self):
-        return f"The point has coordinates ({self.x},{self.y}) "
+        return f"The point has coordinates ({self.x},{self.y})"
 
 
 # Part below is part from automatic judge system from SoftUni

@@ -58,27 +58,29 @@ class Zoo:
     def profit(self, amount):
         self.__budget += amount
 
-    def animals_status(self):
-        message = [f"You have {len(self.animals)} animals"]
-        counted_animals = {"Lion": [], "Tiger": [], "Cheetah": []}
-        for animal in self.animals:
-            counted_animals[animal.__class__.__name__].append(animal.__repr__())
+    @staticmethod
+    def collect_data(some_dict, some_list):
+        message = [f"You have {len(some_list)} {some_list[0].__class__.__base__.__name__.lower()}s"]
 
-        for type_animal, data in counted_animals.items():
-            message.append(f"----- {len(data)} {type_animal}s:")
+        for data in some_list:
+            some_dict[data.__class__.__name__].append(data.__repr__())
+
+        for type_data, data in some_dict.items():
+            message.append(f"----- {len(data)} {type_data}s:")
             message.extend(data)
 
-        return "\n".join(message)
+        return message
+
+    def animals_status(self):
+        dict_animals = {"Lion": [], "Tiger": [], "Cheetah": []}
+
+        result = self.collect_data(dict_animals, self.animals)
+
+        return "\n".join(result)
 
     def workers_status(self):
-        message = [f"You have {len(self.workers)} workers"]
-        counted_workers = {"Keeper": [], "Caretaker": [], "Vet": []}
+        dict_workers = {"Keeper": [], "Caretaker": [], "Vet": []}
 
-        for worker in self.workers:
-            counted_workers[worker.__class__.__name__].append(worker.__repr__())
+        result = self.collect_data(dict_workers, self.workers)
 
-        for type_worker, data in counted_workers.items():
-            message.append(f"----- {len(data)} {type_worker}s:")
-            message.extend(data)
-
-        return "\n".join(message)
+        return "\n".join(result)

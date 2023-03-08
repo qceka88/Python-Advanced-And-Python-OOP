@@ -17,7 +17,7 @@ class vowels:
 
         raise StopIteration
 
-
+# Part below is part from automatic judge system from SoftUni
 my_string = vowels('Abcedifuty0o')
 for char in my_string:
     print(char)

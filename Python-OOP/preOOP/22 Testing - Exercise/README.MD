@@ -1,6 +1,6 @@
 In this exercise for each TASK is provided Different Code to test:
 
-You can Find the code for testing and my solution for testing in the folders in this directory.
+You can Find the code for testing for each task and my solution for testing in the folders in this directory.
 
 Exercise: Unit Testing
 Problems for exercise and homework for the Python OOP Course @SoftUni. 

@@ -104,36 +104,3 @@ class SpaceStation:
             message.extend([f"Name: {astronaut.name}", f"Oxygen: {astronaut.oxygen}", back_pack])
 
         return "\n".join(message)
-
-#
-# workers_invalid = (("Geodesist", "Gosho"),
-#                    ("Meteorologist", "Stavri"),
-#                    ("Geodesist", "Unufri"))
-#
-# single_worker = ("Geodesist", "Gosho")
-#
-# workers = (("Biologist", "Gosho"),
-#            ("Meteorologist", "Stavri"),
-#            ("Geodesist", "Unufri"),
-#            ("Geodesist", "Pensiq"),
-#            ("Biologist", "Silvestar"),
-#            ("Meteorologist", "Tosho"),
-#            ("Meteorologist", "BaiHui"),)
-#
-# planetata1 = "Payner"
-# items1 = 'disk, silikon, mikrofon, otverka, vibrator, slushalki, Milko Kalaidjiev, kamak, nojica, hartiq'
-# # planetata2 = "Mars"
-# # items2 = "kamani, izvanzemno, led, marsohodi, spatnici"
-#
-# station = SpaceStation()
-#
-# for a in workers_invalid:
-#     print(station.add_astronaut(*a))
-# # print(station.add_astronaut(*single_worker))
-# print(station.add_planet(planetata1, items1))
-#
-# # print(station.retire_astronaut("Pensiq"))
-# # station.recharge_oxygen()
-# print(station.send_on_mission("Payner"))
-# # [print(f"{a.name} - {a.oxygen}") for a in station.astronaut_repository.astronauts]
-# print(station.report())

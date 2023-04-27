@@ -21,7 +21,6 @@ class Movie(ABC):
 
     @title.setter
     def title(self, value):
-        #TODO: not sure if tittle is whitespaces
         if value.strip() == "":
             raise ValueError("The title cannot be empty string!")
         self.__title = value
@@ -47,7 +46,6 @@ class Movie(ABC):
             raise ValueError("The owner must be an object of type User!")
 
         self.__owner = value
-
 
     @property
     def age_restriction(self):
